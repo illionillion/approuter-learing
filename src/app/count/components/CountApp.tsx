@@ -1,5 +1,6 @@
 'use client'
 import { FC, useState } from "react";
+import { CountView } from "./CountView";
 
 export const CountApp:FC = () => {
     const [count, setCount] = useState<number>(0)
@@ -11,7 +12,7 @@ export const CountApp:FC = () => {
         setCount(prev => prev - 1)
     }
     return <>
-        <p><span>カウント：</span><span>{count}</span></p>
+        <CountView count={count} />
         <div className="flex gap-3">
             <input type="button" onClick={handlePlus} value='+' />
             <input type="button" onClick={handleMinus} value='-' />
